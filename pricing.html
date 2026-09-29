@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeGoal - 定價方案</title>
+  <meta name="description" content="選擇最適合您的 WeGoal 方案，從個人成長到企業賦能，我們都有完美的解決方案。">
+  <link rel="icon" href="logo/logo_black_cut.jpeg" type="image/jpeg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#020617',
+            surface: '#0f172a',
+            primary: '#3b82f6',
+            text_primary: '#f8fafc',
+            text_secondary: '#94a3b8',
+            dark_bg: '#020617'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <script src="i18n.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+      color: #f8fafc;
+    }
+
+    .glow-primary-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glow-primary-hover:hover {
+      box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    }
+
+    .aurora-glow {
+      position: absolute;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(2, 6, 23, 0) 70%);
+      top: -10%;
+      left: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .aurora-glow-2 {
+      position: absolute;
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 0%, rgba(2, 6, 23, 0) 70%);
+      top: 20%;
+      right: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-white bg-background">
+
+  <script src="nav.js"></script>
+
+  <!-- Header Section -->
+  <header class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-grid-pattern opacity-30"></div>
+    <div class="aurora-glow"></div>
+    <div class="aurora-glow-2"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 data-i18n="pricing_header_h1" data-i18n-html class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">簡單透明的 <span class="text-primary">定價方案</span></h1>
+      <p data-i18n="pricing_header_p" class="text-xl text-text_secondary max-w-3xl mx-auto">為您的目標選擇最合適的動力來源。隨時可取消，無隱藏費用。</p>
+    </div>
+  </header>
+
+  <!-- Pricing Cards -->
+  <section class="py-12 bg-background relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Basic Plan -->
+        <div class="bg-surface rounded-3xl p-8 border border-slate-800 flex flex-col hover:border-slate-600 transition-colors">
+          <h3 data-i18n="pricing_basic_title" class="text-2xl font-bold text-white mb-2">基礎版</h3>
+          <p data-i18n="pricing_basic_desc" class="text-text_secondary mb-6 text-sm">適合剛開始建立習慣的個人用戶</p>
+          <div class="mb-6">
+            <span data-i18n="pricing_basic_price" class="text-4xl font-black text-white" data-pricing-free>免費</span>
+          </div>
+          <a href="login.html?tab=register" data-i18n="pricing_basic_btn" class="w-full bg-slate-800 text-white font-semibold py-3 rounded-xl text-center hover:bg-slate-700 transition-colors mb-8">
+            立即開始
+          </a>
+          <div class="flex-1">
+            <p data-i18n="pricing_basic_includes" class="text-sm font-bold text-white mb-4">包含功能：</p>
+            <ul class="space-y-4">
+              <li class="flex items-start text-sm text-text_secondary">
+                <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_basic_f1">最多建立 3 個專屬圈子</span>
+              </li>
+              <li class="flex items-start text-sm text-text_secondary">
+                <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_basic_f2">基礎習慣追蹤與打卡</span>
+              </li>
+              <li class="flex items-start text-sm text-text_secondary">
+                <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_basic_f3">參與公共社群挑戰賽</span>
+              </li>
+              <li class="flex items-start text-sm text-text_secondary">
+                <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_basic_f4">基礎數據報表 (保留 30 天)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="bg-surface rounded-3xl p-8 border-2 border-primary relative transform md:-translate-y-4 shadow-[0_0_40px_rgba(59,130,246,0.15)] flex flex-col">
+          <div data-i18n="pricing_pro_badge" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-teal-400 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
+            最受歡迎
+          </div>
+          <h3 data-i18n="pricing_pro_title" class="text-2xl font-bold text-white mb-2">進階版</h3>
+          <p data-i18n="pricing_pro_desc" class="text-text_secondary mb-6 text-sm">解鎖完整數據洞察與無限可能</p>
+          <div class="mb-6 flex items-end">
+            <span data-i18n="pricing_pro_currency" class="text-xl text-text_secondary font-medium mr-1" data-currency-symbol>HKD$</span>
+            <span class="text-4xl font-black text-white" data-pricing-advanced data-price-hkd="58" data-price-twd="220" data-price-usd="8">58</span>
+            <span data-i18n="pricing_pro_cycle" class="text-text_secondary ml-1" data-pricing-cycle>/ 月</span>
+          </div>
+          <a href="#" data-i18n="pricing_pro_btn" class="w-full bg-primary text-white font-semibold py-3 rounded-xl text-center hover:bg-blue-600 transition-colors glow-primary-hover mb-8">
+            免費試用 14 天
+          </a>
+          <div class="flex-1">
+            <p data-i18n="pricing_pro_includes" class="text-sm font-bold text-white mb-4">包含基礎版所有功能，加上：</p>
+            <ul class="space-y-4">
+              <li class="flex items-start text-sm text-white">
+                <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_pro_f1">無限制建立專屬圈子</span>
+              </li>
+              <li class="flex items-start text-sm text-white">
+                <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_pro_f2">進階數據分析與無限期歷史紀錄</span>
+              </li>
+              <li class="flex items-start text-sm text-white">
+                <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_pro_f3">專屬深色模式自訂主題</span>
+              </li>
+              <li class="flex items-start text-sm text-white">
+                <svg class="w-5 h-5 text-primary mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_pro_f4">優先客服支援</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="bg-surface rounded-3xl p-8 border border-slate-800 flex flex-col hover:border-slate-600 transition-colors">
+          <h3 data-i18n="pricing_ent_title" class="text-2xl font-bold text-white mb-2">企業夥伴版</h3>
+          <p data-i18n="pricing_ent_desc" class="text-text_secondary mb-6 text-sm">專為實體場館與品牌打造的 O2O 解決方案</p>
+          <div class="mb-6">
+            <span data-i18n="pricing_ent_price" class="text-4xl font-black text-white" data-pricing-enterprise>客製化</span>
+          </div>
+          <a href="#" data-i18n="pricing_ent_btn" class="w-full bg-transparent border border-slate-600 text-white font-semibold py-3 rounded-xl text-center hover:bg-slate-800 transition-colors mb-8">
+            聯絡業務團隊
+          </a>
+          <div class="flex-1">
+            <p data-i18n="pricing_ent_includes" class="text-sm font-bold text-white mb-4">專屬功能：</p>
+            <ul class="space-y-4">
+              <li class="flex items-start text-sm text-text_secondary">
+                <svg class="w-5 h-5 text-teal-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_ent_f1">品牌專屬線上圈子與挑戰賽</span>
+              </li>
+              <li class="flex items-start text-sm text-text_secondary">
+                <svg class="w-5 h-5 text-teal-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_ent_f2">地理位置打卡與 O2O 導流機制</span>
+              </li>
+              <li class="flex items-start text-sm text-text_secondary">
+                <svg class="w-5 h-5 text-teal-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_ent_f3">點數兌換系統整合</span>
+              </li>
+              <li class="flex items-start text-sm text-text_secondary">
+                <svg class="w-5 h-5 text-teal-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="pricing_ent_f4">企業級數據看板與用戶洞察報告</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-dark_bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 data-i18n="pricing_faq_title" class="text-3xl font-bold text-white mb-10 text-center">常見問題</h2>
+      <div class="space-y-6">
+        <!-- FAQ Item 1 -->
+        <div class="bg-surface rounded-2xl p-6 border border-slate-800">
+          <h4 data-i18n="pricing_faq_q1" class="text-lg font-bold text-white mb-2">我可以隨時取消訂閱嗎？</h4>
+          <p data-i18n="pricing_faq_a1" class="text-text_secondary">是的，您可以隨時在帳戶設定中取消訂閱進階版。取消後，您仍可享受進階版功能直到該計費週期結束，之後將自動降級為基礎版。</p>
+        </div>
+        <!-- FAQ Item 2 -->
+        <div class="bg-surface rounded-2xl p-6 border border-slate-800">
+          <h4 data-i18n="pricing_faq_q2" class="text-lg font-bold text-white mb-2">基礎版與進階版的數據儲存差異是什麼？</h4>
+          <p data-i18n="pricing_faq_a2" class="text-text_secondary">基礎版的歷史數據僅保留最近 30 天的詳細紀錄。若升級為進階版，您的所有歷史紀錄將被永久保存，並且可以使用我們強大的數據分析圖表功能。</p>
+        </div>
+        <!-- FAQ Item 3 -->
+        <div class="bg-surface rounded-2xl p-6 border border-slate-800">
+          <h4 data-i18n="pricing_faq_q3" class="text-lg font-bold text-white mb-2">企業版方案如何收費？</h4>
+          <p data-i18n="pricing_faq_a3" class="text-text_secondary">企業版採客製化報價，會根據您的場館規模、預計導流人數及特殊功能需求（如客製化點數商城）來進行評估。請與我們的業務團隊聯繫以獲取詳細報價。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <script src="footer.js"></script>
+
+  <script src="chat.js"></script>
+</body>
+</html>

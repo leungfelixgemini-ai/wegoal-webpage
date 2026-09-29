@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeGoal - 企業合作</title>
+  <meta name="description" content="WeGoal 結合個人追蹤與社群挑戰，讓線上習慣無縫連結線下實踐。我們與您一同為場館注入新動能。">
+  <link rel="icon" href="logo/logo_black_cut.jpeg" type="image/jpeg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#020617',
+            surface: '#0f172a',
+            primary: '#3b82f6',
+            text_primary: '#f8fafc',
+            text_secondary: '#94a3b8',
+            dark_bg: '#020617'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <script src="i18n.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+      color: #f8fafc;
+    }
+
+    .glow-primary-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glow-primary-hover:hover {
+      box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    }
+
+    .aurora-glow {
+      position: absolute;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(2, 6, 23, 0) 70%);
+      top: -10%;
+      left: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .aurora-glow-2 {
+      position: absolute;
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 0%, rgba(2, 6, 23, 0) 70%);
+      top: 20%;
+      right: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .abstract-shape {
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      animation: morph 8s ease-in-out infinite;
+    }
+
+    @keyframes morph {
+      0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+      34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+      67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+    }
+  </style>
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-white bg-background">
+
+  <script src="nav.js"></script>
+
+  <!-- Header Section -->
+  <header class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-grid-pattern opacity-30"></div>
+    <div class="aurora-glow"></div>
+    <div class="aurora-glow-2"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 data-i18n="partners_header_h1" data-i18n-html class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">為您的場館注入 <span class="text-primary">全新動能</span></h1>
+      <p data-i18n="partners_header_p" class="text-xl text-text_secondary max-w-3xl mx-auto">WeGoal 的企業合作方案，專為實體場館與品牌打造。透過 O2O 導流與強大的社群黏著度，創造雙贏局面。</p>
+    </div>
+  </header>
+
+  <!-- O2O Detail -->
+  <section class="py-20 bg-background relative border-t border-slate-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-16">
+        <div class="w-full md:w-1/2">
+          <h2 data-i18n="partners_o2o_title" class="text-3xl font-bold text-white mb-6">官方夥伴專屬「主場優勢」</h2>
+          <p data-i18n="partners_o2o_desc" class="text-lg text-text_secondary leading-relaxed mb-6">透過賦予您「官方合作夥伴」地位，我們將在系統運營機制中提供專屬配套，確保您的推廣心血轉化為實際的線下回流。</p>
+          
+          <div class="space-y-6 mt-8">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/20 text-primary border border-primary/30">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="partners_o2o_f1_title" class="text-xl font-bold text-white">優先導流與專屬徽章</h4>
+                <p data-i18n="partners_o2o_f1_desc" class="mt-2 text-text_secondary">透過活動指引、專屬數位徽章及榮譽點數等設計，鼓勵企業員工及用戶優先選擇至您的場地完成挑戰。</p>
+              </div>
+            </div>
+
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/20 text-primary border border-primary/30">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="partners_o2o_f2_title" class="text-xl font-bold text-white">主題挑戰框架支援</h4>
+                <p data-i18n="partners_o2o_f2_desc" class="mt-2 text-text_secondary">運用系統內建的「主題性實體挑戰」框架，將您的專業場地服務與數位習慣養成結合，大幅提升高階套餐的吸引力。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 flex justify-center relative min-h-[400px]">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="relative w-72 h-72 border border-gray-700/50 rounded-full flex items-center justify-center animate-[spin_25s_linear_infinite]">
+              <div class="absolute w-full h-full border border-gray-700/50 rounded-full rotate-45"></div>
+              <div class="absolute w-full h-full border border-gray-700/50 rounded-full -rotate-45"></div>
+              <div class="w-52 h-52 border border-primary/30 rounded-full flex items-center justify-center abstract-shape bg-primary/5 backdrop-blur-sm">
+                <div class="w-24 h-24 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute top-1/4 right-1/4 w-16 h-16 bg-slate-800/80 backdrop-blur-md rounded-xl border border-slate-700/50 flex items-center justify-center shadow-lg -translate-y-4 animate-[bounce_3s_infinite]">
+            <span class="text-2xl">📱</span>
+          </div>
+          <div class="absolute bottom-1/4 left-1/4 w-16 h-16 bg-slate-800/80 backdrop-blur-md rounded-xl border border-slate-700/50 flex items-center justify-center shadow-lg translate-y-4 animate-[bounce_4s_infinite_reverse]">
+             <span class="text-2xl">🏋️‍♂️</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Detail -->
+  <section class="py-20 bg-dark_bg relative border-t border-slate-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col-reverse md:flex-row items-center gap-16">
+        <div class="w-full md:w-1/2">
+           <div class="grid grid-cols-2 gap-4">
+             <div class="bg-surface p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors">
+               <div data-i18n="partners_stat1_val" class="text-4xl font-black text-white mb-2">+45%</div>
+               <div data-i18n="partners_stat1_label" class="text-sm text-text_secondary">用戶回訪率提升</div>
+             </div>
+             <div class="bg-surface p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors translate-y-4">
+               <div data-i18n="partners_stat2_val" class="text-4xl font-black text-white mb-2">3x</div>
+               <div data-i18n="partners_stat2_label" class="text-sm text-text_secondary">社群主動分享次數</div>
+             </div>
+             <div class="bg-surface p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors">
+               <div data-i18n="partners_stat3_val" class="text-4xl font-black text-white mb-2">90%</div>
+               <div data-i18n="partners_stat3_label" class="text-sm text-text_secondary">挑戰完成度</div>
+             </div>
+             <div class="bg-surface p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors translate-y-4">
+               <div data-i18n="partners_stat4_val" class="text-4xl font-black text-white mb-2">+2.5h</div>
+               <div data-i18n="partners_stat4_label" class="text-sm text-text_secondary">平均停留時間增加</div>
+             </div>
+           </div>
+        </div>
+
+        <div class="w-full md:w-1/2">
+          <h2 data-i18n="partners_ent_title" class="text-3xl font-bold text-white mb-6">企業賦能與高額分潤</h2>
+          <p data-i18n="partners_ent_desc" class="text-lg text-text_secondary leading-relaxed mb-6">無痛升級為具備高附加價值的「O2O 21 天企業賦能高階體驗套餐」，享受高度定價彈性與利潤成長。</p>
+          
+          <div class="space-y-6 mt-8">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-teal-500/20 text-teal-400 border border-teal-500/30">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="partners_ent_f1_title" class="text-xl font-bold text-white">認證圈子與數據儀表板</h4>
+                <p data-i18n="partners_ent_f1_desc" class="mt-2 text-text_secondary">授權包裝「官方專屬認證圈子」（上限12人，專為小型高階團隊打造），並提供企業專屬後台儀表板，輕鬆量化活動成效。</p>
+              </div>
+            </div>
+
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-teal-500/20 text-teal-400 border border-teal-500/30">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="partners_ent_f2_title" class="text-xl font-bold text-white">自主溢價與成長型分潤</h4>
+                <p data-i18n="partners_ent_f2_desc" class="mt-2 text-text_secondary">場館具備完全定價自主權，高於底價之溢價全數歸場館所有；隨推廣量提升，更可享最高達 70% 的高額分潤機制。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner CTA -->
+  <section class="py-24 relative overflow-hidden bg-background">
+    <div class="absolute inset-0 bg-primary/5"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center z-10 bg-surface/50 p-12 rounded-3xl border border-slate-700/50 backdrop-blur-sm">
+      <h2 data-i18n="partners_cta_title" class="text-3xl md:text-4xl font-extrabold text-white mb-6">加入我們，成為 WeGoal 合作夥伴</h2>
+      <p data-i18n="partners_cta_desc" class="text-lg text-text_secondary mb-10 max-w-2xl mx-auto">無論您是獨立健身房、連鎖運動中心還是健康生活品牌，我們都有適合您的合作方案。</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button data-i18n="partners_cta_btn1" class="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:-translate-y-1 glow-primary-hover transition-all duration-300 text-lg">
+          聯繫業務團隊
+        </button>
+        <a href="pricing.html" data-i18n="partners_cta_btn2" class="bg-transparent text-white border border-slate-600 font-semibold px-8 py-4 rounded-full hover:bg-slate-800 transition-all duration-300 text-lg text-center">
+          查看企業方案定價
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <script src="footer.js"></script>
+
+  <script src="chat.js"></script>
+</body>
+</html>

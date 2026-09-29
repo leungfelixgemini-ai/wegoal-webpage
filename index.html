@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth overflow-x-hidden">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeGoal - 重新定義你的目標，從每一個習慣開始</title>
+  <meta name="description" content="WeGoal 結合個人追蹤與社群挑戰，讓線上習慣無縫連結線下實踐。無論是個人成長或團隊突破，我們與你一同達成。">
+  <link rel="icon" href="logo/logo_black_cut.jpeg" type="image/jpeg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#020617', // Deep Navy
+            surface: '#0f172a', // Slate 900
+            primary: '#3b82f6', // Vibrant Blue
+            text_primary: '#f8fafc',
+            text_secondary: '#94a3b8',
+            dark_bg: '#020617'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <script src="i18n.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+      color: #f8fafc;
+    }
+
+    .glow-primary-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glow-primary-hover:hover {
+      box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    }
+
+    /* Aurora Glow Elements */
+    .aurora-glow {
+      position: absolute;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(2, 6, 23, 0) 70%);
+      top: -10%;
+      left: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .aurora-glow-2 {
+      position: absolute;
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 0%, rgba(2, 6, 23, 0) 70%);
+      top: 20%;
+      right: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Abstract shapes for B2B visual */
+    .abstract-shape {
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      animation: morph 8s ease-in-out infinite;
+    }
+
+    @keyframes morph {
+
+      0%,
+      100% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      }
+
+      34% {
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+      }
+
+      67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-white bg-background">
+
+  <script src="nav.js"></script>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0 bg-grid-pattern opacity-30"></div>
+    <div class="aurora-glow"></div>
+    <div class="aurora-glow-2"></div>
+
+    <div class="relative z-10 w-full text-center px-4 max-w-5xl mx-auto mt-16">
+      <p class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-primary tracking-tight leading-tight mb-4 sm:mb-6">Let's Go. We Goal!
+      </p>
+      <h1 data-i18n="index_hero_h1" data-i18n-html class="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-4 sm:mb-6">
+        重新定義你的目標<br class="hidden sm:block">
+        從每一個習慣開始
+      </h1>
+      <p data-i18n="index_hero_p" data-i18n-html class="mt-4 sm:mt-6 text-lg sm:text-xl text-text_secondary max-w-3xl mx-auto font-normal leading-relaxed">
+        WeGoal 結合個人追蹤與社群挑戰，讓線上習慣無縫連結線下實踐。<br class="hidden sm:block">無論是個人成長或團隊突破，我們與你一同達成。
+      </p>
+
+      <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <button data-i18n="index_hero_btn_download"
+          class="w-full sm:w-auto bg-primary text-white font-semibold px-8 py-4 rounded-full hover:-translate-y-1 glow-primary-hover transition-all duration-300 text-lg text-center flex items-center justify-center">
+          免費下載
+        </button>
+        <a href="partners.html" data-i18n="index_hero_btn_partner"
+          class="w-full sm:w-auto bg-transparent text-white border border-white/20 font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300 text-lg text-center">
+          成為合作場館
+        </a>
+      </div>
+
+      <!-- App Screenshot Showcase -->
+      <div class="mt-12 sm:mt-20 w-full">
+        <!-- Phone carousel -->
+        <div id="phone-showcase" class="flex items-end justify-center gap-2 sm:gap-4 md:gap-6 select-none">
+
+          <!-- Phone 0 -->
+          <div class="phone-slot flex-shrink-0 cursor-pointer" data-order="0">
+            <div class="phone-inner relative bg-slate-900 rounded-[2.5rem] border-2 border-slate-700 overflow-hidden"
+              style="aspect-ratio:9/19.5;">
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center gap-3 border-2 border-dashed border-slate-700 rounded-[2.3rem] m-1">
+                <span class="text-3xl font-extrabold text-slate-600">1</span>
+                <span data-i18n="index_screenshot_label" class="text-slate-600 text-xs text-center px-4">上傳 App 截圖</span>
+              </div>
+              <div class="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-900 rounded-full z-10"></div>
+            </div>
+          </div>
+
+          <!-- Phone 1 -->
+          <div class="phone-slot flex-shrink-0 cursor-pointer" data-order="1">
+            <div class="phone-inner relative bg-slate-900 rounded-[2.5rem] border-2 border-slate-700 overflow-hidden"
+              style="aspect-ratio:9/19.5;">
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center gap-3 border-2 border-dashed border-slate-700 rounded-[2.3rem] m-1">
+                <span class="text-3xl font-extrabold text-slate-600">2</span>
+                <span class="text-slate-600 text-xs text-center px-4">上傳 App 截圖</span>
+              </div>
+              <div class="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-900 rounded-full z-10"></div>
+            </div>
+          </div>
+
+          <!-- Phone 2 -->
+          <div class="phone-slot flex-shrink-0 cursor-pointer" data-order="2">
+            <div class="phone-inner relative bg-slate-900 rounded-[2.5rem] border-2 border-slate-700 overflow-hidden"
+              style="aspect-ratio:9/19.5;">
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center gap-3 border-2 border-dashed border-slate-700 rounded-[2.3rem] m-1">
+                <span class="text-3xl font-extrabold text-slate-600">3</span>
+                <span class="text-slate-600 text-xs text-center px-4">上傳 App 截圖</span>
+              </div>
+              <div class="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-900 rounded-full z-10"></div>
+            </div>
+          </div>
+
+          <!-- Phone 3 -->
+          <div class="phone-slot flex-shrink-0 cursor-pointer" data-order="3">
+            <div class="phone-inner relative bg-slate-900 rounded-[2.5rem] border-2 border-slate-700 overflow-hidden"
+              style="aspect-ratio:9/19.5;">
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center gap-3 border-2 border-dashed border-slate-700 rounded-[2.3rem] m-1">
+                <span class="text-3xl font-extrabold text-slate-600">4</span>
+                <span class="text-slate-600 text-xs text-center px-4">上傳 App 截圖</span>
+              </div>
+              <div class="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-900 rounded-full z-10"></div>
+            </div>
+          </div>
+
+          <!-- Phone 4 -->
+          <div class="phone-slot flex-shrink-0 cursor-pointer" data-order="4">
+            <div class="phone-inner relative bg-slate-900 rounded-[2.5rem] border-2 border-slate-700 overflow-hidden"
+              style="aspect-ratio:9/19.5;">
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center gap-3 border-2 border-dashed border-slate-700 rounded-[2.3rem] m-1">
+                <span class="text-3xl font-extrabold text-slate-600">5</span>
+                <span class="text-slate-600 text-xs text-center px-4">上傳 App 截圖</span>
+              </div>
+              <div class="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-900 rounded-full z-10"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dot indicators -->
+        <div class="flex justify-center gap-2 mt-6">
+          <button class="phone-dot rounded-full bg-slate-700 transition-all duration-300"
+            style="width:0.5rem;height:0.5rem" data-dot="0"></button>
+          <button class="phone-dot rounded-full bg-slate-700 transition-all duration-300"
+            style="width:0.5rem;height:0.5rem" data-dot="1"></button>
+          <button class="phone-dot rounded-full bg-slate-700 transition-all duration-300"
+            style="width:0.5rem;height:0.5rem" data-dot="2"></button>
+          <button class="phone-dot rounded-full bg-slate-700 transition-all duration-300"
+            style="width:0.5rem;height:0.5rem" data-dot="3"></button>
+          <button class="phone-dot rounded-full bg-slate-700 transition-all duration-300"
+            style="width:0.5rem;height:0.5rem" data-dot="4"></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Core Features (B2C) -->
+  <section id="features" class="py-24 bg-background relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="bg-surface p-8 rounded-2xl border border-slate-800/60 shadow-lg transition-all duration-300 hover:-translate-y-2 glow-primary-hover group">
+          <div
+            class="w-14 h-14 bg-blue-900/30 border border-blue-500/30 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+              </path>
+            </svg>
+          </div>
+          <h3 data-i18n="index_features_title1" class="text-xl font-bold text-white mb-4">靈活的習慣連結</h3>
+          <p data-i18n="index_features_desc1" class="text-text_secondary leading-relaxed">
+            打破單一限制，獨創雙重計算機制。你的個人進度可同時對應並貢獻至多個專屬圈子（Circle）目標。
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-surface p-8 rounded-2xl border border-slate-800/60 shadow-lg transition-all duration-300 hover:-translate-y-2 glow-primary-hover group">
+          <div
+            class="w-14 h-14 bg-blue-900/30 border border-blue-500/30 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
+            </svg>
+          </div>
+          <h3 data-i18n="index_features_title2" class="text-xl font-bold text-white mb-4">高強度挑戰賽</h3>
+          <p data-i18n="index_features_desc2" class="text-text_secondary leading-relaxed">
+            參與短期、高爆發的競爭型挑戰（如：團隊 100km 衝刺），激發極限，與好友或社群成員一較高下。
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-surface p-8 rounded-2xl border border-slate-800/60 shadow-lg transition-all duration-300 hover:-translate-y-2 glow-primary-hover group">
+          <div
+            class="w-14 h-14 bg-blue-900/30 border border-blue-500/30 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+              </path>
+            </svg>
+          </div>
+          <h3 data-i18n="index_features_title3" class="text-xl font-bold text-white mb-4">數據化成就追蹤</h3>
+          <p data-i18n="index_features_desc3" class="text-text_secondary leading-relaxed">
+            深色模式專屬的視覺化圖表，清晰呈現你的每一步成長軌跡與數據累積。
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="features.html"
+          class="inline-flex items-center text-primary font-semibold hover:text-white transition-colors duration-300 group">
+          <span data-i18n="index_features_learn_more">了解所有核心功能</span>
+          <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+      (function () {
+        // order[pos] = phoneId; center = position 2 (middle of 5)
+        let order = [0, 1, 2, 3, 4];
+
+        // Dynamic sizing based on viewport width
+        function getSizes() {
+          const w = window.innerWidth;
+          if (w < 480) return { center: '42vw', near: '20vw', far: '8vw' };
+          if (w < 768) return { center: '30vw', near: '18vw', far: '10vw' };
+          return { center: '13rem', near: '9.5rem', far: '7.5rem' };
+        }
+
+        const TRANS = 'all 0.5s cubic-bezier(0.34,1.4,0.64,1)';
+
+        function getSlots() {
+          return Array.from(document.querySelectorAll('#phone-showcase .phone-slot'));
+        }
+        function getDots() {
+          return Array.from(document.querySelectorAll('.phone-dot'));
+        }
+
+        function applyOrder() {
+          const slots = getSlots();
+          const dots = getDots();
+          const n = slots.length;
+          const centerPos = Math.floor(n / 2); // 2 for 5 phones
+          const sizes = getSizes();
+
+          order.forEach((phoneId, pos) => {
+            const slot = slots[phoneId];
+            const inner = slot.querySelector('.phone-inner');
+            const dist = Math.abs(pos - centerPos);
+            const isCenter = dist === 0;
+
+            // Width based on distance from center
+            let w = sizes.center;
+            if (dist === 1) w = sizes.near;
+            if (dist >= 2) w = sizes.far;
+
+            // Opacity based on distance
+            let op = '1';
+            if (dist === 1) op = window.innerWidth < 768 ? '0.8' : '0.6';
+            if (dist >= 2) op = window.innerWidth < 768 ? '0.4' : '0.35';
+
+            slot.style.order = pos;
+            slot.style.transition = TRANS;
+            slot.style.width = w;
+            slot.style.opacity = op;
+            // Less translateY on mobile
+            const lift = window.innerWidth < 768 ? '-8px' : '-14px';
+            slot.style.transform = isCenter ? `translateY(${lift})` : 'translateY(0)';
+
+            inner.style.transition = 'box-shadow 0.5s ease, border-color 0.5s ease';
+            inner.classList.remove('border-slate-700', 'border-primary');
+            if (isCenter) {
+              inner.classList.add('border-primary');
+              inner.style.boxShadow = '0 0 60px rgba(59,130,246,0.3)';
+            } else {
+              inner.classList.add('border-slate-700');
+              inner.style.boxShadow = '0 0 30px rgba(0,0,0,0.5)';
+            }
+          });
+
+          // Dots: highlight the phoneId at center position
+          const activeId = order[centerPos];
+          dots.forEach((dot, i) => {
+            if (i === activeId) {
+              dot.style.background = '#3b82f6';
+              dot.style.width = '1.5rem';
+            } else {
+              dot.style.background = '';
+              dot.style.width = '0.5rem';
+            }
+          });
+        }
+
+        function moveToCenter(phoneId) {
+          const n = order.length;
+          const centerPos = Math.floor(n / 2);
+          const currentPos = order.indexOf(phoneId);
+          if (currentPos === centerPos) return;
+
+          const shift = currentPos - centerPos;
+          if (shift > 0) {
+            order = [...order.slice(shift), ...order.slice(0, shift)];
+          } else {
+            const absShift = Math.abs(shift);
+            order = [...order.slice(n - absShift), ...order.slice(0, n - absShift)];
+          }
+          applyOrder();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          const slots = getSlots();
+          const dots = getDots();
+
+          slots.forEach((slot, i) => { slot.style.order = i; });
+
+          const showcase = document.getElementById('phone-showcase');
+          if (showcase) showcase.style.display = 'flex';
+
+          applyOrder();
+
+          slots.forEach((slot, phoneId) => {
+            slot.addEventListener('click', () => moveToCenter(phoneId));
+          });
+
+          dots.forEach((dot, phoneId) => {
+            dot.addEventListener('click', () => moveToCenter(phoneId));
+          });
+          
+          // Swipe functionality
+          let startX = 0;
+          let currentX = 0;
+          let isDragging = false;
+
+          if (showcase) {
+            showcase.addEventListener('touchstart', (e) => {
+              startX = e.touches[0].clientX;
+              currentX = startX;
+              isDragging = true;
+            }, { passive: true });
+
+            showcase.addEventListener('touchmove', (e) => {
+              if (!isDragging) return;
+              currentX = e.touches[0].clientX;
+            }, { passive: true });
+
+            showcase.addEventListener('touchend', () => {
+              if (!isDragging) return;
+              isDragging = false;
+              
+              const diffX = startX - currentX;
+              if (Math.abs(diffX) > 40) { // 40px swipe threshold
+                const centerPos = Math.floor(order.length / 2);
+                if (diffX > 0) {
+                  // Swiped left
+                  moveToCenter(order[centerPos + 1]);
+                } else {
+                  // Swiped right
+                  moveToCenter(order[centerPos - 1]);
+                }
+              }
+            });
+          }
+          
+          // Re-apply order on resize to update widths dynamically
+          let resizeTimer;
+          window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(applyOrder, 100);
+          });
+        });
+      })();
+  </script>
+
+  <!-- Partners (B2B2C / O2O) -->
+  <section id="partners" class="py-24 bg-dark_bg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-16">
+
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2">
+          <h2 data-i18n="index_partners_h2" data-i18n-html class="text-3xl md:text-4xl font-extrabold text-white mb-10 leading-tight">打通線上線下，<br>為您的場館注入新動能。</h2>
+
+          <ul class="space-y-8 mb-12">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center border border-primary">
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="index_partners_li1_title" class="text-lg font-bold text-white">官方夥伴主場優勢 (O2O)</h4>
+                <p data-i18n="index_partners_li1_desc" class="mt-2 text-text_secondary">透過專屬活動指引與數位徽章，鼓勵企業用戶優先至您的場地完成挑戰，創造主場引流效益。</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center border border-primary">
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="index_partners_li4_title" class="text-lg font-bold text-white">主題挑戰與 21 天賦能</h4>
+                <p data-i18n="index_partners_li4_desc" class="mt-2 text-text_secondary">導入「21天企業賦能高階體驗套餐」，將您的實體服務與數位習慣養成無縫整合，提升企業客戶忠誠度。</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center border border-primary">
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 data-i18n="index_partners_li5_title" class="text-lg font-bold text-white">高額分潤與自主溢價</h4>
+                <p data-i18n="index_partners_li5_desc" class="mt-2 text-text_secondary">專為小型高階團隊 (12人/圈) 打造。場館具備完全的定價自主權，且最高可享高達 70% 的成長型分潤。</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="partners.html"
+            class="group inline-flex items-center text-primary text-lg font-semibold relative pb-2 transition-all duration-300 bg-transparent">
+            <span data-i18n="index_partners_learn_more">查看企業夥伴方案</span>
+            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+
+        <!-- Right Visual -->
+        <div class="w-full md:w-1/2 flex justify-center relative min-h-[400px]">
+          <!-- Abstract representation of O2O -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <!-- Digital Globe concept -->
+            <div
+              class="relative w-72 h-72 border border-gray-700/50 rounded-full flex items-center justify-center animate-[spin_25s_linear_infinite]">
+              <div class="absolute w-full h-full border border-gray-700/50 rounded-full rotate-45"></div>
+              <div class="absolute w-full h-full border border-gray-700/50 rounded-full -rotate-45"></div>
+              <div
+                class="w-52 h-52 border border-primary/30 rounded-full flex items-center justify-center abstract-shape bg-primary/5 backdrop-blur-sm">
+                <!-- Inner core glowing -->
+                <div class="w-24 h-24 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Floating elements -->
+          <div
+            class="absolute top-1/4 right-1/4 w-12 h-12 bg-slate-800/60 backdrop-blur-md rounded-xl border border-slate-700/50 flex items-center justify-center shadow-lg -translate-y-4 animate-[bounce_3s_infinite]">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div
+            class="absolute bottom-1/4 left-1/4 w-12 h-12 bg-slate-800/60 backdrop-blur-md rounded-xl border border-slate-700/50 flex items-center justify-center shadow-lg translate-y-4 animate-[bounce_4s_infinite_reverse]">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+              </path>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Vision -->
+  <section id="about" class="py-32 bg-background">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <div
+        class="w-16 h-16 mx-auto bg-slate-800/60 rounded-full flex items-center justify-center mb-8 border border-slate-700/50">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+          </path>
+        </svg>
+      </div>
+      <p data-i18n="index_about_desc" data-i18n-html class="text-xl md:text-2xl text-text_secondary leading-relaxed font-light mb-10">
+        WeGoal 不僅僅是一個追蹤工具，我們致力於打造一個具備高度擴展性的生態系統，讓每個人的目標都能在<span
+          class="text-white font-medium">現實與數位的交匯處</span>獲得最大的支持與回報。
+      </p>
+      <a href="about.html"
+        class="inline-flex items-center justify-center bg-slate-800 text-white font-semibold px-8 py-3 rounded-full hover:bg-slate-700 transition-colors duration-300">
+        <span data-i18n="index_about_btn">探索我們的故事</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Pricing Summary -->
+  <section id="pricing" class="py-24 bg-dark_bg border-t border-slate-800/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 data-i18n="index_pricing_title" class="text-3xl md:text-4xl font-extrabold text-white mb-6">為您的目標選擇合適的動力</h2>
+      <p data-i18n="index_pricing_subtitle" class="text-lg text-text_secondary mb-12">從免費的個人追蹤到企業級的 O2O 解決方案，WeGoal 陪伴您成長。</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+        <div class="bg-surface border border-slate-800 p-6 rounded-2xl">
+          <h4 data-i18n="index_pricing_plan1" class="text-white font-bold mb-2">基礎版</h4>
+          <p data-i18n="index_pricing_plan1_price" class="text-primary font-black text-2xl" data-pricing-free>免費</p>
+        </div>
+        <div
+          class="bg-surface border-2 border-primary/50 p-6 rounded-2xl relative shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+          <div data-i18n="index_pricing_plan2_badge" class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs px-2 py-0.5 rounded-full">
+            最受歡迎</div>
+          <h4 data-i18n="index_pricing_plan2" class="text-white font-bold mb-2">進階版</h4>
+          <p class="text-white font-black text-2xl flex items-baseline justify-center gap-1">
+            <span class="text-xl text-text_secondary font-medium" data-currency-symbol>HKD$</span>
+            <span data-pricing-advanced data-price-hkd="58" data-price-twd="220" data-price-usd="8">58</span>
+            <span data-i18n="index_pricing_plan2_cycle" class="text-sm text-text_secondary font-normal" data-pricing-cycle>/ 月</span>
+          </p>
+        </div>
+        <div class="bg-surface border border-slate-800 p-6 rounded-2xl">
+          <h4 data-i18n="index_pricing_plan3" class="text-white font-bold mb-2">企業夥伴版</h4>
+          <p data-i18n="index_pricing_plan3_price" class="text-white font-black text-2xl" data-pricing-enterprise>客製化</p>
+        </div>
+      </div>
+      <a href="pricing.html"
+        class="inline-flex items-center text-primary text-lg font-semibold hover:text-white transition-colors duration-300 group">
+        <span data-i18n="index_pricing_btn">查看詳細定價方案</span>
+        <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none"
+          stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <script src="footer.js"></script>
+
+  <script src="chat.js"></script>
+</body>
+
+</html>

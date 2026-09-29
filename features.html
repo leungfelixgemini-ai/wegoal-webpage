@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeGoal - 核心功能</title>
+  <meta name="description" content="WeGoal 結合個人追蹤與社群挑戰，讓線上習慣無縫連結線下實踐。無論是個人成長 or 團隊突破，我們與你一同達成。">
+  <link rel="icon" href="logo/logo_black_cut.jpeg" type="image/jpeg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#020617',
+            surface: '#0f172a',
+            primary: '#3b82f6',
+            text_primary: '#f8fafc',
+            text_secondary: '#94a3b8',
+            dark_bg: '#020617'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <script src="i18n.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+      color: #f8fafc;
+    }
+
+    .glow-primary-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glow-primary-hover:hover {
+      box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    }
+
+    .aurora-glow {
+      position: absolute;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(2, 6, 23, 0) 70%);
+      top: -10%;
+      left: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .aurora-glow-2 {
+      position: absolute;
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 0%, rgba(2, 6, 23, 0) 70%);
+      top: 20%;
+      right: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-white bg-background">
+
+  <script src="nav.js"></script>
+
+  <!-- Header Section -->
+  <header class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-grid-pattern opacity-30"></div>
+    <div class="aurora-glow"></div>
+    <div class="aurora-glow-2"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 data-i18n="feat_header_h1" data-i18n-html class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">探索 <span class="text-primary">WeGoal</span> 核心體驗</h1>
+      <p data-i18n="feat_header_p" class="text-xl text-text_secondary max-w-3xl mx-auto">我們打造了一套完整的系統，從個人的微小習慣累積，到團隊的高強度衝刺，全方位助您達成目標。</p>
+    </div>
+  </header>
+
+  <!-- Detailed Feature 1 -->
+  <section class="py-20 bg-background relative border-t border-slate-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-16">
+        <div class="w-full md:w-1/2">
+          <div class="w-16 h-16 bg-blue-900/30 border border-blue-500/30 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+            </svg>
+          </div>
+          <h2 data-i18n="feat_f1_title" class="text-3xl font-bold text-white mb-6">靈活的習慣連結</h2>
+          <p data-i18n="feat_f1_desc" class="text-lg text-text_secondary leading-relaxed mb-6">打破單一目標的限制，WeGoal 獨創雙重計算機制。您的每一次個人進度更新，都能同時對應並貢獻至多個專屬圈子（Circle）的共同目標。</p>
+          <ul class="space-y-4">
+            <li class="flex items-center text-text_secondary"><div class="w-2 h-2 bg-primary rounded-full mr-3"></div> <span data-i18n="feat_f1_li1">一次打卡，多重貢獻</span></li>
+            <li class="flex items-center text-text_secondary"><div class="w-2 h-2 bg-primary rounded-full mr-3"></div> <span data-i18n="feat_f1_li2">自訂義圈子，與好友共享進度</span></li>
+            <li class="flex items-center text-text_secondary"><div class="w-2 h-2 bg-primary rounded-full mr-3"></div> <span data-i18n="feat_f1_li3">視覺化進度條，成就感滿分</span></li>
+          </ul>
+        </div>
+        <div class="w-full md:w-1/2 relative min-h-[400px] flex justify-center items-center">
+          <div class="w-full max-w-md bg-surface border border-slate-700/50 rounded-3xl shadow-2xl p-6 relative z-10 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-teal-400"></div>
+            <div class="flex items-center justify-between mb-6">
+              <h3 data-i18n="feat_f1_box_title" class="text-white font-bold">今日任務</h3>
+              <span data-i18n="feat_f1_box_badge" class="text-xs text-primary bg-primary/10 px-2 py-1 rounded-full">3個圈子同步中</span>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                <div class="flex justify-between items-center mb-2">
+                  <span data-i18n="feat_f1_box_t1" class="text-white text-sm font-medium">晨跑 5km</span>
+                  <span class="text-primary text-sm font-bold">100%</span>
+                </div>
+                <div class="w-full bg-slate-900 rounded-full h-2">
+                  <div class="bg-primary h-2 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                <div class="flex justify-between items-center mb-2">
+                  <span data-i18n="feat_f1_box_t2" class="text-white text-sm font-medium">閱讀 30 分鐘</span>
+                  <span class="text-teal-400 text-sm font-bold">50%</span>
+                </div>
+                <div class="w-full bg-slate-900 rounded-full h-2">
+                  <div class="bg-teal-400 h-2 rounded-full" style="width: 50%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Decorative blurred background element -->
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/20 rounded-full blur-[80px] z-0"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Feature 2 -->
+  <section class="py-20 bg-dark_bg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col-reverse md:flex-row items-center gap-16">
+        <div class="w-full md:w-1/2 relative min-h-[400px] flex justify-center items-center">
+          <div class="w-full max-w-md bg-surface border border-slate-700/50 rounded-3xl shadow-2xl p-6 relative z-10 overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-orange-500"></div>
+            <div class="flex items-center justify-between mb-6">
+              <h3 data-i18n="feat_f2_box_title" class="text-white font-bold">團隊 100km 衝刺</h3>
+              <span data-i18n="feat_f2_box_badge" class="text-xs text-red-500 bg-red-500/10 px-2 py-1 rounded-full">進行中</span>
+            </div>
+            <div class="flex items-end gap-2 mb-6 justify-center">
+              <span class="text-5xl font-black text-white">84</span>
+              <span class="text-text_secondary mb-1">/ 100 km</span>
+            </div>
+            <div class="w-full bg-slate-900 rounded-full h-3 mb-4 overflow-hidden">
+              <div class="bg-gradient-to-r from-orange-500 to-red-500 h-3 rounded-full relative" style="width: 84%">
+                <!-- Shine effect -->
+                <div class="absolute top-0 left-0 w-full h-full bg-white/20 -skew-x-12 translate-x-[-100%] animate-[shimmer_2s_infinite]"></div>
+              </div>
+            </div>
+            <div class="flex justify-between text-xs text-text_secondary">
+              <span data-i18n="feat_f2_box_time">剩下 2 天</span>
+              <span data-i18n="feat_f2_box_rank">超越 80% 隊伍</span>
+            </div>
+          </div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-red-500/15 rounded-full blur-[80px] z-0"></div>
+        </div>
+        <div class="w-full md:w-1/2">
+          <div class="w-16 h-16 bg-red-900/30 border border-red-500/30 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h2 data-i18n="feat_f2_title" class="text-3xl font-bold text-white mb-6">高強度挑戰賽</h2>
+          <p data-i18n="feat_f2_desc" class="text-lg text-text_secondary leading-relaxed mb-6">參與短期、高爆發的競爭型挑戰，激發潛能與極限。與好友或全球社群成員一較高下，在排行榜上留下您的榮耀。</p>
+          <ul class="space-y-4">
+            <li class="flex items-center text-text_secondary"><div class="w-2 h-2 bg-red-500 rounded-full mr-3"></div> <span data-i18n="feat_f2_li1">各式主題挑戰：跑步、健身、閱讀</span></li>
+            <li class="flex items-center text-text_secondary"><div class="w-2 h-2 bg-red-500 rounded-full mr-3"></div> <span data-i18n="feat_f2_li2">即時動態排行榜，激發競爭心</span></li>
+            <li class="flex items-center text-text_secondary"><div class="w-2 h-2 bg-red-500 rounded-full mr-3"></div> <span data-i18n="feat_f2_li3">挑戰成功獲取專屬虛擬徽章與獎勵</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Feature 3 -->
+  <section class="py-20 bg-background relative border-t border-slate-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-16">
+        <div class="w-full md:w-1/2">
+          <div class="w-16 h-16 bg-purple-900/30 border border-purple-500/30 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h2 data-i18n="feat_f3_title" class="text-3xl font-bold text-white mb-6">數據化成就追蹤</h2>
+          <p data-i18n="feat_f3_desc" class="text-lg text-text_secondary leading-relaxed mb-6">專為深色模式設計的視覺化圖表，清晰呈現您的每一步成長軌跡與數據累積。回顧過去，展望未來。</p>
+          <ul class="space-y-4">
+            <li class="flex items-center text-text_secondary"><div class="w-2 h-2 bg-purple-400 rounded-full mr-3"></div> <span data-i18n="feat_f3_li1">每週、每月詳細活動熱點圖</span></li>
+            <li class="flex items-center text-text_secondary"><div class="w-2 h-2 bg-purple-400 rounded-full mr-3"></div> <span data-i18n="feat_f3_li2">成長趨勢線分析與洞察</span></li>
+            <li class="flex items-center text-text_secondary"><div class="w-2 h-2 bg-purple-400 rounded-full mr-3"></div> <span data-i18n="feat_f3_li3">匯出個人年度數據回顧</span></li>
+          </ul>
+        </div>
+        <div class="w-full md:w-1/2 relative min-h-[400px] flex justify-center items-center">
+           <div class="w-full max-w-md bg-surface border border-slate-700/50 rounded-3xl shadow-2xl p-6 relative z-10 overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-indigo-500"></div>
+            <div class="flex items-center justify-between mb-6">
+              <h3 data-i18n="feat_f3_box_title" class="text-white font-bold">活動分佈</h3>
+              <select class="bg-slate-800 text-xs text-white border border-slate-700 rounded-md px-2 py-1 outline-none">
+                <option data-i18n="feat_f3_box_select">本月</option>
+              </select>
+            </div>
+            <!-- Mock Bar Chart -->
+            <div class="flex items-end justify-between h-40 gap-2 mb-4 mt-8">
+              <div class="w-1/6 bg-purple-500/20 hover:bg-purple-500/40 rounded-t-sm h-[30%] transition-colors relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 px-2 py-1 rounded">20</div></div>
+              <div class="w-1/6 bg-purple-500/40 hover:bg-purple-500/60 rounded-t-sm h-[50%] transition-colors relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 px-2 py-1 rounded">45</div></div>
+              <div class="w-1/6 bg-purple-500 rounded-t-sm h-[90%] transition-colors relative group shadow-[0_0_15px_rgba(168,85,247,0.5)]"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 px-2 py-1 rounded">85</div></div>
+              <div class="w-1/6 bg-purple-500/60 hover:bg-purple-500/80 rounded-t-sm h-[70%] transition-colors relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 px-2 py-1 rounded">60</div></div>
+              <div class="w-1/6 bg-purple-500/30 hover:bg-purple-500/50 rounded-t-sm h-[40%] transition-colors relative group"><div class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity bg-slate-800 px-2 py-1 rounded">35</div></div>
+            </div>
+            <div class="flex justify-between text-xs text-text_secondary border-t border-slate-700 pt-2">
+              <span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span>
+            </div>
+          </div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/15 rounded-full blur-[80px] z-0"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-primary/10"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center z-10">
+      <h2 data-i18n="feat_cta_title" class="text-3xl md:text-5xl font-extrabold text-white mb-6">準備好開始改變了嗎？</h2>
+      <p data-i18n="feat_cta_desc" class="text-xl text-text_secondary mb-10">立即加入 WeGoal，讓每一個習慣都成為達成目標的基石。</p>
+      <button data-i18n="feat_cta_btn" class="bg-primary text-white font-semibold px-10 py-4 rounded-full hover:-translate-y-1 glow-primary-hover transition-all duration-300 text-lg">
+        免費下載 App
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <script src="footer.js"></script>
+
+  <style>
+    @keyframes shimmer {
+      100% {
+        transform: translateX(100%) skewX(-12deg);
+      }
+    }
+  </style>
+  <script src="chat.js"></script>
+</body>
+</html>

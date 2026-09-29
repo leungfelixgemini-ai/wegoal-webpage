@@ -1,0 +1,5 @@
+# Google Drive upload cache
+.tmp.driveupload/
+
+# Already its own Git repository: https://github.com/iLet0001/wegoal-sync-center
+wegoal-sync-center/
