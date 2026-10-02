@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <h4 data-i18n="footer_legal_title" class="text-white font-semibold mb-6">法律資訊</h4>
           <ul class="space-y-4">
             <li><a href="privacy.html" data-i18n="footer_legal_privacy" class="text-sm text-gray-500 hover:text-white transition-colors duration-300">隱私權政策</a></li>
-            <li><a href="#" data-i18n="footer_legal_terms" class="text-sm text-gray-500 hover:text-white transition-colors duration-300">使用者條款</a></li>
+            <li><a href="terms.html" data-i18n="footer_legal_terms" class="text-sm text-gray-500 hover:text-white transition-colors duration-300">使用者條款</a></li>
           </ul>
         </div>
 
