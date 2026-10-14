@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <ul class="space-y-4">
             <li><a href="privacy.html" data-i18n="footer_legal_privacy" class="text-sm text-gray-500 hover:text-white transition-colors duration-300">隱私權政策</a></li>
             <li><a href="terms.html" data-i18n="footer_legal_terms" class="text-sm text-gray-500 hover:text-white transition-colors duration-300">使用者條款</a></li>
+            <li><a href="delete-account.html" data-i18n="footer_legal_delete" class="text-sm text-gray-500 hover:text-white transition-colors duration-300">帳戶刪除說明</a></li>
           </ul>
         </div>
 

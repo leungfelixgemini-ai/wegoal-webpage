@@ -162,6 +162,7 @@ const I18N = {
       "footer_legal_title": "法律資訊",
       "footer_legal_privacy": "隱私權政策",
       "footer_legal_terms": "使用者條款",
+      "footer_legal_delete": "帳戶刪除說明",
       "footer_contact_title": "聯絡我們",
 
       "feat_header_h1": "探索 <span class='text-primary'>WeGoal</span> 核心體驗",
@@ -419,6 +420,7 @@ const I18N = {
       "footer_legal_title": "Legal",
       "footer_legal_privacy": "Privacy Policy",
       "footer_legal_terms": "Terms of Service",
+      "footer_legal_delete": "Account Deletion",
       "footer_contact_title": "Contact Us",
 
       "feat_header_h1": "Explore <span class='text-primary'>WeGoal</span> Core Experience",

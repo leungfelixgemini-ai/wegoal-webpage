@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeGoal - 帳戶刪除說明 (Account Deletion)</title>
+  <meta name="description" content="WeGoal Limited 帳戶刪除說明。無需登入即可閱讀。刪除請在 WeGoal App 的設定中完成。">
+  <link rel="icon" href="logo/logo_black_cut.jpeg" type="image/jpeg">
+  <link rel="canonical" href="https://wegoal-hk.com/delete-account.html">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#020617',
+            surface: '#0f172a',
+            primary: '#3b82f6',
+            text_primary: '#f8fafc',
+            text_secondary: '#94a3b8',
+            dark_bg: '#020617'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <script src="i18n.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+      color: #f8fafc;
+    }
+
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    }
+
+    .aurora-glow {
+      position: absolute;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(2, 6, 23, 0) 70%);
+      top: -10%;
+      left: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .aurora-glow-2 {
+      position: absolute;
+      width: 40vw;
+      height: 40vw;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 0%, rgba(2, 6, 23, 0) 70%);
+      top: 20%;
+      right: 10%;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-primary selection:text-white bg-background">
+
+  <script src="nav.js"></script>
+
+  <!-- Header Section -->
+  <header class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-grid-pattern opacity-30"></div>
+    <div class="aurora-glow"></div>
+    <div class="aurora-glow-2"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">帳戶刪除說明</h1>
+      <p class="text-xl text-text_secondary max-w-3xl mx-auto">WeGoal Limited 帳戶刪除說明</p>
+    </div>
+  </header>
+
+  <!-- Account Deletion Content -->
+  <section class="py-20 bg-background relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-surface rounded-3xl p-8 md:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+        
+        <div class="relative z-10">
+          <p class="text-text_secondary mb-6 leading-relaxed">
+            本頁是 <strong class="text-white">WeGoal</strong>（<strong class="text-white">WeGoal Limited</strong>）的帳戶刪除說明。本頁公開提供，無需登入即可閱讀。本頁只說明如何刪除帳戶，不會在此執行刪除。
+          </p>
+
+          <h2 class="text-2xl font-semibold text-white mb-4 mt-8">在 App 裡刪除帳戶</h2>
+          <p class="text-text_secondary mb-6 leading-relaxed">請開啟 WeGoal App，依下列步驟操作：</p>
+          <ol class="space-y-3 mb-6">
+            <li class="flex items-center gap-4 bg-background/60 border border-slate-800 rounded-2xl px-5 py-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/15 text-primary font-semibold flex items-center justify-center">1</span>
+              <span class="text-white font-medium">設定</span>
+            </li>
+            <li class="flex items-center gap-4 bg-background/60 border border-slate-800 rounded-2xl px-5 py-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/15 text-primary font-semibold flex items-center justify-center">2</span>
+              <span class="text-white font-medium">刪除帳戶</span>
+            </li>
+            <li class="flex items-center gap-4 bg-background/60 border border-slate-800 rounded-2xl px-5 py-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/15 text-primary font-semibold flex items-center justify-center">3</span>
+              <span class="text-white font-medium">驗證身分</span>
+            </li>
+            <li class="flex items-center gap-4 bg-background/60 border border-slate-800 rounded-2xl px-5 py-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/15 text-primary font-semibold flex items-center justify-center">4</span>
+              <span class="text-white font-medium">確認</span>
+            </li>
+          </ol>
+          <p class="text-text_secondary mb-6 leading-relaxed">真正的刪除只在 WeGoal App 的設定裡完成。</p>
+
+          <h2 class="text-2xl font-semibold text-white mb-4 mt-8">會刪除哪些資料</h2>
+          <p class="text-text_secondary mb-4 leading-relaxed">確認刪除帳戶後，與該帳戶相關的下列資料會一併刪除：</p>
+          <ul class="list-disc pl-6 text-text_secondary mb-6 space-y-2 leading-relaxed">
+            <li><strong class="text-white">基本帳戶資料</strong>：姓名、電郵地址、聯絡電話、社交媒體帳戶代碼。</li>
+            <li><strong class="text-white">健康與活動數據</strong>：步數、跑步距離（如挑戰數據）、體組成報告及其他習慣追蹤紀錄。</li>
+            <li><strong class="text-white">習慣、圈子與使用者內容</strong>：您建立的習慣與圈子、打卡與挑戰紀錄、成就、頭像及佐證照片等與帳戶相關的內容。</li>
+          </ul>
+
+          <h2 class="text-2xl font-semibold text-white mb-4 mt-8">保留期限</h2>
+          <p class="text-text_secondary mb-6 leading-relaxed">沒有額外保留期限。您在 App 內確認刪除後，上述資料即予刪除，WeGoal 不會再額外保留一段時間。</p>
+
+          <h2 class="text-2xl font-semibold text-white mb-4 mt-8">只想刪除部分資料</h2>
+          <p class="text-text_secondary mb-6 leading-relaxed">若您只想刪除部分資料，不必刪除整個帳戶。請在 WeGoal App 裡刪除個別習慣或個別圈子，其餘帳戶資料會保留。</p>
+
+          <p class="text-text_secondary leading-relaxed">其他個人資料的收集與使用方式，請參閱 <a href="privacy.html" class="text-primary hover:text-white transition-colors">隱私權政策</a>。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <script src="footer.js"></script>
+
+  <script src="chat.js"></script>
+</body>
+</html>
